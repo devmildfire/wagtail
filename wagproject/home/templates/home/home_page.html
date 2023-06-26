@@ -10,10 +10,14 @@
 {% comment %}
 Delete the line below if you're just getting started and want to remove the welcome screen!
 {% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
+
+<header class="header">
+    This is a Header
+</header>
 
 <h1> {{ page.title }} </h1>
 <h2> {{ page.subtitle }} </h2>
