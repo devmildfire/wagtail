@@ -1,3 +1,7 @@
+* {
+  outline: 1px solid green;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -44,11 +48,32 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-.header {
+.page {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   /* padding-top: 20px;
   padding-bottom: 10px; */
   border-bottom: 1px solid #15151a;
+  background-color: #308282;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding-top: 20px;
+    padding-bottom: 10px; */
+  border-top: 1px solid #15151a;
+
+  margin-top: auto;
+  background-color: #308282;
 }
