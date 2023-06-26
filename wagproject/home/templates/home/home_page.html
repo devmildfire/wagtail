@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<h1> {{ page.title }} </h1>
+<h2> {{ page.subtitle }} </h2>
+
+<div>
+    {{ page.rtfbody|richtext }}
+</div>
+
+{% image page.bg_image  fill-100x100 as bgimage %}
+
+<!-- {% image page.bg_image  fill-100x100 %} -->
+
+<img src="{{ bgimage.url }}" alt="bgimage.alt">
+
+<div>
+
+    <a href="{{ bgimage.url }}"> ссылка на картинку с alt {{ bgimage.alt }} </a>
+</div>
+
+
+
+{% endblock content %}
