@@ -3,9 +3,29 @@ from django.db import models
 from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField
+from wagtail.snippets.models import register_snippet
+
+
+@register_snippet
+class Footer(models.Model):
+
+    bodyText = RichTextField()
+
+    panels = [
+        FieldPanel('bodyText')
+    ]
+
+    class Meta:
+        verbose_name = 'Футер'
+        verbose_name_plural = 'Футеры'
+
+    def __str__(self):
+        return "Футер"
 
 
 class NewsPage(Page):
+
+    # template = 'home'
 
     pass
 
