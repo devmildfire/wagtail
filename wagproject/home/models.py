@@ -5,7 +5,15 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField
 
 
+class NewsPage(Page):
+
+    pass
+
+
 class HomePage(Page):
+
+    # subpage_types = ['home.NewsPage']
+    # parent_page_types = []
 
     # Поля в базе данных
     subtitle = models.CharField(
